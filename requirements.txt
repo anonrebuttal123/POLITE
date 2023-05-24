@@ -20,4 +20,4 @@ tqdm
 rich
 moviepy
 ruff
-scikit-learn
+tensorboardX

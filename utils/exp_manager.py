@@ -19,8 +19,6 @@ import yaml
 from gymnasium import spaces
 from gym import register
 from huggingface_sb3 import EnvironmentName
-from mlagents_envs.environment import UnityEnvironment
-from mlagents_envs.side_channel.engine_configuration_channel import EngineConfigurationChannel
 from optuna.pruners import BasePruner, MedianPruner, NopPruner, SuccessiveHalvingPruner
 from optuna.samplers import BaseSampler, RandomSampler, TPESampler
 from optuna.study import MaxTrialsCallback
@@ -52,8 +50,6 @@ import utils.import_envs  # noqa: F401 pytype: disable=import-error
 from utils.hyperparams_opt import HYPERPARAMS_SAMPLER
 from utils.utils import get_class_by_name
 
-from metaworld.envs import (ALL_V2_ENVIRONMENTS_GOAL_OBSERVABLE,
-                                ALL_V2_ENVIRONMENTS_GOAL_HIDDEN)
 
 # For custom activation fn
 from torch import nn as nn  # noqa: F401
@@ -64,7 +60,6 @@ from pref.callbacks import UpdateRewardFunctionCriticalPoint
 from utils.callbacks import SaveVecNormalizeCallback, TrialEvalCallback
 from utils.utils import ALGOS, get_callback_list, get_latest_run_id, get_wrapper_class, linear_schedule, \
     get_preference_callbacks, get_preference_wrappers, get_preference_human_critic
-from gym_unity.envs import UnityToGymWrapper
 
 
 class ExperimentManager:

@@ -1,6 +1,19 @@
 # Preference-learning Branch
 This project is based on the POLITE framework.
 
+## Install instructions
+(Optional for conda)
+~~~
+conda create --name polite python=3.8
+conda activate polite
+~~~
+Install dependencies
+~~~
+apt-get install swig cmake ffmpeg
+pip install -r requirements.txt
+pip install -U 'mujoco-py<2.2,>=2.1'
+~~~
+
 ## Creating Docker image
 ~~~
 ./scripts/build_docker.sh

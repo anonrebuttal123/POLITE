@@ -2,7 +2,6 @@ import argparse
 import difflib
 import importlib
 import os
-import time
 import uuid
 from datetime import datetime
 
@@ -11,9 +10,6 @@ import gymnasium as gym
 import numpy as np
 import seaborn
 import torch as th
-from gym import register
-from gym_unity.envs import UnityToGymWrapper
-from metaworld.envs import ALL_V2_ENVIRONMENTS_GOAL_OBSERVABLE
 from stable_baselines3.common.utils import set_random_seed
 
 # Register custom envs
@@ -25,36 +21,7 @@ seaborn.set()
 
 
 def register_custom_envs():
-    door_open_goal_observable_cls = ALL_V2_ENVIRONMENTS_GOAL_OBSERVABLE["door-open-v2-goal-observable"]
-    drawer_close_goal_observable_cls = ALL_V2_ENVIRONMENTS_GOAL_OBSERVABLE["drawer-close-v2-goal-observable"]
-    button_press_goal_observable_cls = ALL_V2_ENVIRONMENTS_GOAL_OBSERVABLE["button-press-v2-goal-observable"]
-    register(
-        id="door-open-v2",
-        entry_point=door_open_goal_observable_cls,
-        max_episode_steps=500,
-        apply_api_compatibility=True
-    )
-
-    register(
-        id="drawer-close-v2",
-        entry_point=drawer_close_goal_observable_cls,
-        max_episode_steps=500,
-        apply_api_compatibility=True
-    )
-
-    register(
-        id="button-press-v2",
-        entry_point=button_press_goal_observable_cls,
-        max_episode_steps=500,
-        apply_api_compatibility=True
-    )
-
-    env = UnityToGymWrapper
-    register(
-        id="Social-Nav-v1",
-        entry_point=env,
-        apply_api_compatibility=True
-    )
+    pass
 
 
 if __name__ == "__main__":  # noqa: C901

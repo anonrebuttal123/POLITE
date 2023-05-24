@@ -4,9 +4,6 @@ from datetime import datetime
 
 import gym
 import yaml
-from gym_unity.envs import UnityToGymWrapper
-from mlagents_envs.environment import UnityEnvironment
-from mlagents_envs.side_channel.engine_configuration_channel import EngineConfigurationChannel
 
 
 def save_pickle(obj, name):
@@ -132,8 +129,7 @@ def get_hyperparameters(env_name):
 
     return hyperparameters, env_hyperparameters, learn_hyperparameters, misc
 
-from metaworld.envs import (ALL_V2_ENVIRONMENTS_GOAL_OBSERVABLE,
-                                ALL_V2_ENVIRONMENTS_GOAL_HIDDEN)
+
 def get_env_dimensions(env_id):
     tmp_env = gym.make(env_id)
     action_size = tmp_env.action_space.shape[0] if len(tmp_env.action_space.shape) > 0 else 1
